@@ -1,12 +1,16 @@
 import './expenseitem.css'
 
 const ExpenseItem = () => {
+   const date = new Date(2021 , 3 ,28);
+   const expenseName = 'car insurance';
+   const price = 276.3;
+
   return (
     <div  className='expense-item'>
-        <div>March 28th 2021</div>
+        <div>{date.toDateString()}</div>
         <div className='expense-item__description'>
-            <h2>car insurace</h2>
-            <div className='expense-item__price'>276.3</div>
+            <h2>{expenseName}</h2>
+            <div className='expense-item__price'>${price}</div>
         </div>
     </div>
   )
