@@ -1,12 +1,13 @@
-
+import './expenseitem.css'
 
 const ExpenseItem = () => {
   return (
-    <div>
-        <h1>Expense Items</h1>
-        <h2>Food Rs 10</h2>
-        <h2>Petrol Rs 100</h2>
-        <h2>Movies Rs 200</h2>
+    <div  className='expense-item'>
+        <div>March 28th 2021</div>
+        <div className='expense-item__description'>
+            <h2>car insurace</h2>
+            <div className='expense-item__price'>276.3</div>
+        </div>
     </div>
   )
 }
