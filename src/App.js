@@ -1,6 +1,7 @@
 
 import './App.css';
 import ExpenseItem from './components/Expenses/ExpenseItem';
+import Form from './components/Expenses/Form';
 
 const App = () => {
   const expenses = [
@@ -36,6 +37,10 @@ const App = () => {
 
 
   return (
+    <div>
+    <div>
+      <Form />
+    </div>
     <div className="App">
     {
       expenses.map((e,i)=>{
@@ -43,6 +48,7 @@ const App = () => {
       })
     }
     
+    </div>
     </div>
   );
 }

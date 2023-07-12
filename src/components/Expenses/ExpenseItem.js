@@ -12,6 +12,7 @@ const ExpenseItem = (props) => {
     
    }
   return (
+    
     <div id={props.id} className='expense-item'>
     <Card >
     
@@ -22,9 +23,6 @@ const ExpenseItem = (props) => {
         <div>
           <button onClick={clickhandler}>delete</button>
         </div>
-        
-           
-            
         
     </Card>
     </div>
