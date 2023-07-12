@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import './Form.css'
 
 const Form = () => {
-    const [title,setTitle] = useState();
-    const [amount,setAmount] = useState();
-    const [location,setLocation] = useState();
-    const [date,setdate] = useState();
+    const [enteredTitle,setenteredTitle] = useState();
+    const [enteredAmount,setAmount] = useState();
+    const [enteredLocation,setLocation] = useState();
+    const [enteredDate,setdate] = useState();
     
     function handleInput(e){
-        if(e.target.name === "title"){
-            setTitle(e.target.value)
+        if(e.target.name === "Title"){
+            setenteredTitle(e.target.value)
             console.log(e.target.value)
         }else if(e.target.name === 'amount'){
             setAmount(e.target.value)
@@ -22,27 +22,49 @@ const Form = () => {
             console.log(e.target.value)
         }
         <input type='text' />
-       
+ 
     }
+    
+    const submitHandler = (e) =>{
+         e.preventDefault(); 
+         
+         const expenseData = {
+            Title : enteredTitle,
+            amount : enteredAmount,
+            location : enteredLocation,
+            date : new Date(enteredDate),
+        }
+
+
+         setenteredTitle("") ;
+         setAmount("")
+         setLocation("")
+         setdate("")  
+    }
+
+   
+
+
+
   return (
     
-    <form>
+    <form onSubmit={submitHandler}>
     <div className='new-expense__controls'>
       <div className='new-expense__control'>
         <label>Title</label>
-        <input type='text'  value={title} name='title' placeholder='title' onChange={handleInput} />
+        <input type='text'  value={enteredTitle} name='Title' placeholder='Title' onChange={handleInput} />
       </div>
       <div className='new-expense__control'>
         <label>Amount</label>
-        <input type='number' min='0.01' step='0.01'  value={amount} name='amount' placeholder='amount' onChange={handleInput} />
+        <input type='number' min='0.01' step='0.01'  value={enteredAmount} name='amount' placeholder='amount' onChange={handleInput} />
       </div>
       <div className='new-expense__control'>
         <label>location</label>
-        <input type='text'   value={location} name='location' placeholder='location' onChange={handleInput} />
+        <input type='text'   value={enteredLocation} name='location' placeholder='location' onChange={handleInput} />
       </div>
       <div className='new-expense__control'>
         <label>Date</label>
-        <input type='date' min='2019-01-01' max='2022-12-31'  value={date} name='date' placeholder='title' onChange={handleInput} />
+        <input type='date' min='2019-01-01' max='2022-12-31'  value={enteredDate} name='date'  onChange={handleInput} />
       </div>
     </div>
     <div className='new-expense__actions'>
