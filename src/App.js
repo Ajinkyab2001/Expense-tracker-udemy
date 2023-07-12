@@ -1,8 +1,9 @@
 
 import { useState } from 'react';
 import './App.css';
-import ExpenseItem from './components/Expenses/ExpenseItem';
+
 import NewExpense from './components/Form/NewExpense';
+import Expenses from './components/Expenses/expenses';
 
 
 const App = () => {
@@ -52,11 +53,7 @@ const App = () => {
        <NewExpense onAddExpense = {addExpenseHandler}/>
     </div>
     <div className="App">
-    {
-      expenses.map((e,i)=>{
-        return <ExpenseItem key={i} id={i} title={e.title} amount={e.amount} date={e.date} location={e.location} />
-      })
-    }
+        <Expenses expenses={expenses} />
     
     </div>
     </div>

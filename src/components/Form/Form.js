@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import './Form.css'
 
 const Form = (props) => {
-    const [enteredTitle,setenteredTitle] = useState();
-    const [enteredAmount,setAmount] = useState();
-    const [enteredLocation,setLocation] = useState();
-    const [enteredDate,setdate] = useState();
+    const [enteredTitle,setenteredTitle] = useState('');
+    const [enteredAmount,setAmount] = useState('');
+    const [enteredLocation,setLocation] = useState('');
+    const [enteredDate,setdate] = useState('');
     
     function handleInput(e){
         if(e.target.name === "Title"){
