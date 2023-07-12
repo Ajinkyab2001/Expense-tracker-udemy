@@ -39,10 +39,10 @@ const App = () => {
     <div className="App">
     {
       expenses.map((e,i)=>{
-        return <ExpenseItem key={i} title={e.title} amount={e.amount} date={e.date} location={e.location} />
+        return <ExpenseItem key={i} id={i} title={e.title} amount={e.amount} date={e.date} location={e.location} />
       })
     }
-      {/* <ExpenseItem /> */}
+    
     </div>
   );
 }
