@@ -25,7 +25,7 @@ const ExpensesList = (props) => {
 
 
     let expensesContent ;
-    let singleExpense = <p className='noExpense'>Only single Expense here. Please add more..</p>
+    let singleExpense = <p key={new Date().getTime()} className='noExpense'>Only single Expense here. Please add more..</p>
     // let singleExpense = [{
     //     title : "Only single Expense here. Please add more..",
     //     id : new Date().getTime()
@@ -41,7 +41,8 @@ const ExpensesList = (props) => {
       return <ExpenseItem key={e.id} id={e.id} title={e.title} amount={e.amount} date={e.date} location={e.location} />
     })
    
-    expensesContent = [...expensesContent, singleExpense]
+    // expensesContent = [...expensesContent, singleExpense]
+    expensesContent.push(singleExpense);
 
     // return (
     //     expensesContent = props.items.map((e,i)=>{
